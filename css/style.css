@@ -1,0 +1,28 @@
+h1{
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+#Ramen, #ramen-menu{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#Ramen img, #ramen-menu img{
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+h2{
+    text-align: center;
+}
+
+#new{
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
