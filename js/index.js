@@ -7,44 +7,60 @@ const ramens = [
     { id: 5, name: "Kimchi Ramen", restaurant: "Neviss", image: "../../images/shoyu.jpg", rating: 8, comment: "Very Spicy"}
  ];
 
- let menu = document.getElementById('ramen-menu')
 
  function displayRamens() {
-    ramens.forEach(ramen => {
-        
-        html = `<div>
-        <img src = "${ramen.image}" alt = "${ramen.name}"> 
-        <div id = "ramen-menu">
-        <div id = "name"></div>
-        </div>
-        </div>`
+    // let ramen_menu = document.getElementById('ramen-menu')
 
-        menu.innerHTML += html
+    // ramens.forEach(function(ramen){
+    //     let htm = `<img src="" alt="${ramen.name}">`
+
+    //     ramen_menu.innerHTML += htm
+    // })
+    
+    ramens.forEach(ramen => {
+        let menu = document.getElementById('ramen-menu') 
+        let img = document.createElement("img")
+        img.src = ramen.image;
+        img.alt = ramen.name; 
+        
+        img.addEventListener("click", () => handClick(ramen));
+
+        menu.appendChild(img);
     });
  }
 displayRamens()
 
-function handClick() {
-    
+function handClick(ramen) {
+    document.getElementById("ramen-image").src = ramen.image;
+    document.getElementById("ramen-name").textContent = ramen.name;
+    document.getElementById("ramen-restaurant").textContent = ramen.restaurant;
+    document.getElementById("ramen-rating").textContent = ramen.rating;
+    document.getElementById("ramen-comment").textContent = ramen.comment;
 }
 
 
+function addSubmitListener() {
+    const form = document.getElementById("new-ramen-form");
 
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
 
+        let newRamen = {
+            name: document.getElementById("new-name").value,
+            restaurant: document.getElementById("new-restaurant").value,
+            image: document.getElementById("new-image").value,
+            rating: document.getElementById("new-rating").value,
+            comment: document.getElementById("new-comment").value  
+        };
 
+        ramens.push(newRamen);
+        displayRamens();
+        
+    });
+}
 
-
-
-
-//  function handClick() {
-//     // console.log(ramen.name)
-//    let ramen_details = document.getElementById('ramen-details')
-//    let name = document.getElementById('name')
-// //    name.innerText = ramen.name
-
-// //    console.log(ramen_details)
-// //    ramen_details.style.display = "none"
-//  }
-
-
+window.onload = () => {
+    displayRamens();
+    addSubmitListener();
+};    
 

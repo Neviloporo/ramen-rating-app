@@ -10,23 +10,37 @@
 </head>
 
 
-
-
 <body>
     <h1>Ramen Rater</h1>
     
     <div id="ramen-menu"></div>
-    <h2>Rating:</h2>
-    <h2>Comment:</h2>
+
+    <div id="ramen-detail">
+        <p id="ramen-restaurant"></p>
+        <img src="" alt="" style="width: 200px;">
+        <p id="ramen-rating"></p>
+        <p id="ramen-rating"></p>
+    </div>
+    
+    
+    <div id="ramen-detail">
+        <img id="ramen-image"  alt="Selected Ramen">
+        <h2 id="ramen-name">Select a ramen</h2>
+        <p><strong>Restaurant</strong> <span id="ramen-restaurant"></span></p>
+        <p><strong>Rating</strong> <span id="ramen-rating"></span></p>
+        <p><strong>Comment</strong> <span id="ramen-comment"></span></p>
+    </div>
 
 
     <h2 id="new">Add New Ramen</h2>
-    <form action="input" type = "text"></form>
+    <form id="Ramen">
+        <input type="text" id="name" placeholder="Ramen Name" required>
+        <input type="text" id="restaurant" placeholder="Restaurant" required>
+        <input type="text" id="image" placeholder="Image" required>
+        <input type="text" id="rating" placeholder="Rating (1-10)" min="1" max="10" required>
+        <input type="text" id="comment" placeholder="Comment" required>
+        <button type="submit">Add Ramen</button>
+    </form>
 
-
-    <div id="ramen-detail"></div>
-    
-   
-    
 </body>
 </html>
