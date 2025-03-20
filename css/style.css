@@ -3,13 +3,13 @@ h1{
     background-color: black;
     color: white;
 }
-#Ramen, #ramen-menu{
+#ramen-menu{
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
 }
-#Ramen img, #ramen-menu img{
+#ramen-menu img{
     width: 150px;
     height: auto;
     border-radius: 10px;

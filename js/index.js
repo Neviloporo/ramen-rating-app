@@ -23,7 +23,7 @@ const ramens = [
         img.src = ramen.image;
         img.alt = ramen.name; 
         
-        img.addEventListener("click", () => handClick(ramen));
+         img.addEventListener("click", () => handClick(ramen));
 
         menu.appendChild(img);
     });
@@ -40,27 +40,21 @@ function handClick(ramen) {
 
 
 function addSubmitListener() {
-    const form = document.getElementById("new-ramen-form");
+    const form = document.getElementById("ramen");
 
     form.addEventListener("submit", (event) => {
         event.preventDefault();
 
-        let newRamen = {
-            name: document.getElementById("new-name").value,
-            restaurant: document.getElementById("new-restaurant").value,
-            image: document.getElementById("new-image").value,
-            rating: document.getElementById("new-rating").value,
-            comment: document.getElementById("new-comment").value  
+        let  ramen= {
+            name: document.getElementById("name"),
+            restaurant: document.getElementById("restaurant"),
+            image: document.getElementById("image"),
+            rating: document.getElementById("rating"),
+            comment: document.getElementById("comment")  
         };
 
-        ramens.push(newRamen);
         displayRamens();
         
     });
 }
-
-window.onload = () => {
-    displayRamens();
-    addSubmitListener();
-};    
 
